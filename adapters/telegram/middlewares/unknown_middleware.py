@@ -10,8 +10,7 @@ class UnknownMiddleware(BaseMiddleware):
 		state: FSMContext = data.get("state") #получаем FSM
 		current_state = await state.get_state() if state else None #текущие состояние
 
-		#if current_state is not None:
-		#	return
+		
 
 
 		if message.text and message.text.startswith('/'):

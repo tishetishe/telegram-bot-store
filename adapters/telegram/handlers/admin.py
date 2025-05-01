@@ -14,11 +14,6 @@ from celery_app import send_mass_message , log_action
 
 
 
-"""class Mail(StatesGroup):
-	watch_text = State()"""
-		
-
-
 user_repo = UserRepository()
 
 
@@ -62,18 +57,6 @@ async def watch_text(message: types.Message, state: FSMContext):
 	await message.answer(f"Рассылка запущена для {len(user_ids)} пользователей!")
 
 
-	#send_count = 0 #успешиных рассылок
-	#failed_count = 0 #неуспешных)))
-
-	#for user in users:
-	#	try:
-	#		await dp.bot.send_message(user, text) #извликаем из кортежа user_id(число) и сообщение 
-	#		send_count += 1 #если бот смог отправить
-	#	except Exception as e:
-	#		failed_count += 1 #если бот не смог отправить
-			#print(f"{e}")
-
-	#await message.answer(f"Рассылка заверщена!\n📥Отправлено: {send_count}\n⚠️Ошибок: {failed_count}")
 	await state.finish()
 
 

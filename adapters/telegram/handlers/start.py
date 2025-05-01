@@ -25,7 +25,7 @@ user_repo = UserRepository()
 @dp.message_handler(Command("start"))
 async def start_command(message: types.Message):
 	await log_action(message.from_user.id , "запустил бота")
-	await message.answer("Добро пожаловать!\nЯ бот для откладывания и продажи товаров\nВойди или зарегестрируйся для начала работы:",reply_markup=reg_log_mark())
+	await message.answer("Добро пожаловать!\nЯ бот для покупки и продажи товаров\nВыберите Действие:",reply_markup=reg_log_mark())
 	
 
 

@@ -30,9 +30,9 @@ def send_mass_message(user_ids: list , text: str):
 	loop.run_until_complete(_send_all(user_ids , text))
 
 async def _send_all(user_ids , text):
-	async with Bot(token=BOT_TOKEN) as bot:
-		for user_id in user_ids:
-			try:
-				await bot.send_message(chat_id=user_id , text=text)
-			except Exception as e:
-				print(f"Ошибка при отправке {user_id}: {e}")
+	bot = Bot(token=BOT_TOKEN)
+	for user_id in user_ids:
+		try:
+			await bot.send_message(chat_id=user_id , text=text)
+		except Exception as e:
+			print(f"Ошибка при отправке {user_id}: {e}")
